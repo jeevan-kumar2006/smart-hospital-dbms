@@ -20,9 +20,12 @@ async function api(url, opts) {
             body: opts.body ? JSON.stringify(opts.body) : undefined,
             method: opts.method || 'GET'
         });
-        var data = await res.json();
-        if (!res.ok) throw new Error(data.error || 'Request failed');
-        return data;
+        if (!res.ok) {
+            var errText = await res.text();
+            try { var errJson = JSON.parse(errText); throw new Error(errJson.error || 'Request failed'); }
+            catch (parseErr) { throw new Error('Server error (check terminal): ' + errText.substring(0, 120)); }
+        }
+        return await res.json();
     } catch (e) { toast(e.message, 'error'); throw e; }
 }
 
