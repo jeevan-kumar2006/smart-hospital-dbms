@@ -174,7 +174,7 @@ def _seed(conn):
         ("Dr. Meera Gupta","Neurologist",2,"9876543219","meera.g@hosp.com","2020-08-25",155000),
         ("Dr. Amit Verma","Orthopedic Surgeon",3,"9876543220","amit.v@hosp.com","2021-05-30",135000),
         ("Dr. Pooja Iyer","Pediatrician",4,"9876543221","pooja.i@hosp.com","2022-03-15",118000)])
-    c.executemany("INSERT INTO patients (name,age,gender,phone,email,blood_group,address,registration_date,insurance_id,insurance_provider) VALUES (?,?,?,?,?,?,?,?,?,?,?)",[
+    c.executemany("INSERT INTO patients (name,age,gender,phone,email,blood_group,address,registration_date,insurance_id,insurance_provider) VALUES (?,?,?,?,?,?,?,?,?,?)",[
         ("Amitabh B.",78,"Male","9000000001","amitabh@email.com","B+","Mumbai","2024-01-10","INS001","Star Health"),
         ("Sunita Devi",45,"Female","9000000002","sunita@email.com","O-","Delhi","2024-01-15","INS002","HDFC Ergo"),
         ("Rahul Verma",32,"Male","9000000003","rahul@email.com","A+","Bangalore","2024-01-20","INS003","ICICI Lombard"),
