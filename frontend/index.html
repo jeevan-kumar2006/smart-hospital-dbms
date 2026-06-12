@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCore - Smart Hospital Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<aside id="sidebar">
+    <div class="sidebar-brand">
+        <div class="brand-icon"><i class="fas fa-heartbeat"></i></div>
+        <div>
+            <h1>MedCore</h1>
+            <span class="brand-sub">Smart Hospital Management System</span>
+        </div>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-page="dashboard"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="#" class="nav-item" data-page="patients"><i class="fas fa-user-injured"></i> Patients</a>
+        <a href="#" class="nav-item" data-page="doctors"><i class="fas fa-user-md"></i> Doctors</a>
+        <a href="#" class="nav-item" data-page="appointments"><i class="fas fa-calendar-check"></i> Appointments</a>
+        <a href="#" class="nav-item" data-page="beds"><i class="fas fa-bed"></i> Bed Management</a>
+        <a href="#" class="nav-item" data-page="billing"><i class="fas fa-file-invoice-dollar"></i> Billing</a>
+        <div class="nav-divider"></div>
+        <a href="#" class="nav-item" data-page="admin"><i class="fas fa-user-shield"></i> Admin Portal</a>
+        <a href="#" class="nav-item" data-page="user-portal"><i class="fas fa-user-circle"></i> User Portal</a>
+        <a href="#" class="nav-item" data-page="dbms-explorer"><i class="fas fa-database"></i> DBMS Explorer</a>
+    </nav>
+    <div class="sidebar-footer">
+        <div class="db-status"><span class="status-dot"></span> SQLite Connected</div>
+    </div>
+</aside>
+<main id="main-content">
+    <header id="topbar">
+        <button id="sidebar-toggle" class="icon-btn"><i class="fas fa-bars"></i></button>
+        <div id="page-title">Dashboard</div>
+        <div class="topbar-actions">
+            <button id="theme-toggle" class="icon-btn" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+            <span id="clock" class="mono"></span>
+        </div>
+    </header>
+    <div id="page-content"></div>
+</main>
+<div id="modal-overlay" class="modal-overlay hidden">
+    <div id="modal-box" class="modal-box">
+        <div class="modal-header">
+            <h3 id="modal-title"></h3>
+            <button class="icon-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="modal-body" class="modal-body"></div>
+    </div>
+</div>
+<div id="toast-container"></div>
+<script src="app.js"></script>
+</body>
+</html>
